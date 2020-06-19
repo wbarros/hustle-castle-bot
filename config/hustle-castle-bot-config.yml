@@ -1,0 +1,17 @@
+
+myPower: 630000
+#Salva a screenshot tirada do poder do adversario na arena.
+savePowers: false
+#32 tres baixo 2 cima
+#41 quatro baixo 1 cima
+#50 cinco baixo (pega só os de menor poder)
+seletorEstrategia : 50
+
+#recorte do poder
+#MAP
+#ScreenRegion result = new DesktopScreenRegion(0, 560, 282, 145, 25);
+powerCut:
+  x: 560
+  y: 281
+  width: 150
+  height: 28
