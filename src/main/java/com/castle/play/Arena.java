@@ -30,6 +30,7 @@ public class Arena {
     private final String BOTAO_BATALHA_INICIO = "arena/botao_arena_batalha_inicio.png";
     List<ScreenLocation> screenLocationList = null;
     private int minhaPosicao;
+    private static HustleCastleBotConfig config;
     private static Arena instance;
 
     private Arena() {};
@@ -43,6 +44,7 @@ public class Arena {
 
     public void iniciarArena() throws InterruptedException {
         screenLocationList = constroiPosicaoBatalha();
+        config = HustleCastleBotConfig.getInstance();
         System.out.println("Bem-Vindo a ARENA!");
         boolean completouRodada = false;
         Batalha batalha = new Batalha(new ArrayList<>(MAX_PELOTAO), new ArrayList<>(NUM_RODADAS));
@@ -93,11 +95,20 @@ public class Arena {
             mouse.move(screenLocationList.get(i-1));
             mouse.click(screenLocationList.get(i-1));
             Thread.sleep(1300);
-            int poder = findImage.getPower();
+            int poder = findImage.getPower(config.getPowerCut().get("x"), config.getPowerCut().get("y"), config.getPowerCut().get("width"), config.getPowerCut().get("height"));
+            System.out.println("Posicao: " + i + " poder: "+ poder);
+            if(poder > 1200000 && poder < 200000) {
+                poder = findImage.getPower(config.getPowerCut().get("x"), config.getPowerCut().get("y"), config.getPowerCut().get("width")+10, config.getPowerCut().get("height"));
+                System.out.println("Retentativa1 poder: "+ poder);
+            }
+            if(poder > 1200000 && poder < 200000) {
+                poder = findImage.getPower(config.getPowerCut().get("x"), config.getPowerCut().get("y"), config.getPowerCut().get("width")-10, config.getPowerCut().get("height"));
+                System.out.println("Retentativa2 poder: "+ poder);
+            }
+
             Pelotao p = new Pelotao(poder);
             p.setScreenLocation(screenLocationList.get(i-1));
             batalha.getPelotaoListAEnfrentar().add(p);
-            System.out.println("Posicao: " + i + " poder: "+ poder);
 
             //Keyboard keyboard = new DesktopKeyboard();
             //keyboard.keyDown(Key.ESC);

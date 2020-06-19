@@ -32,7 +32,7 @@ public class FindImage {
         return instance;
     }
 
-    public int getPower() {
+    public int getPower(int x, int y, int width, int height) {
         config =  HustleCastleBotConfig.getInstance();
         ScreenRegion s = new DesktopScreenRegion(0, TELA_X, TELA_Y, TELA_WIDTH, TELA_HEIGHT);
         Mouse mouse = new DesktopMouse();
@@ -64,7 +64,7 @@ public class FindImage {
         System.out.println("x4=" +r.getLowerLeftCorner().getX() + " y3="+r.getLowerLeftCorner().getY());
         System.out.println("x4=" +r2.getLowerRightCorner().getX() + " y3="+r2.getLowerRightCorner().getY());*/
 
-        ScreenRegion result = new DesktopScreenRegion(0, config.getPowerCut().get("x"), config.getPowerCut().get("y"), config.getPowerCut().get("width"), config.getPowerCut().get("height"));
+        ScreenRegion result = new DesktopScreenRegion(0, x, y, width, height);
         BufferedImage bf = result.capture();
         BufferedImage bfEdited = Utils.converterPixelBlacktoWhite(bf, 205); // todos os pixels que for menor que 205 no RGB 0 a 255, será 0
 
