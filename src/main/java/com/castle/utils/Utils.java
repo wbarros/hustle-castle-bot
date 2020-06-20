@@ -58,7 +58,9 @@ public class Utils {
             while(findImage.imageExists(nomeImagem) && Main.continuar) {
                 System.out.println(msg);
                 if (i == 15) {
-                    encontraImagemParaClicar("arena/botao_interogacao_nao_deixar_ocioso.png");
+                    encontraImagemParaClicar("arena/botao_arena_cancelar.png");
+                } else if( i == 20) {
+                    encontraImagemParaClicar("arena/botao_arena_sem_comida.png");
                     i=0;
                 }
                 Thread.sleep(2000);

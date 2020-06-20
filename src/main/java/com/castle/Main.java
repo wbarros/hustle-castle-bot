@@ -44,32 +44,6 @@ public class Main extends JPanel{
 
 		try {
 			loadConfig(args[0]);
-		} catch (IOException e) {
-			logger.error("Erro ao carregar arquivo de configuracao.", e);
-		}
-
-        /*try {
-            Loader.load(opencv_core.class);
-        } catch (UnsatisfiedLinkError e) {
-            String path = Loader.cacheResource(opencv_core.class, "windows-x86_64/jniopencv_core.dll").getPath();
-            new ProcessBuilder("C:/jniDLL/DependenciesGui.exe", path).start().waitFor();
-        }*/
-
-        //System.setProperty("java.library.path", "C://Users//Wellington//AppData//Local//Tesseract-OCR//");
-
-		/*String fileName = "j2_1.png";
-		File outputfile = new File("saved.png");
-		Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
-		BufferedImage clip = (BufferedImage) cb.getData(DataFlavor.imageFlavor);
-		ImageIO.write(clip, "png", outputfile);
-		String power = new ImageToText().converterFromClipboard(outputfile);
-		System.out.println(power);*/
-
-//		FindImage fi = new FindImage();
-//		fi.find();
-//		Arena arena = new Arena();
-//		arena.iniciarArena();
-		try {
 			SwingUtilities.invokeLater(() -> createAndShowGui());
 		} catch (Exception e) {
 			logger.error("Exception : ", e);
@@ -161,7 +135,7 @@ public class Main extends JPanel{
 								Utils.sairDoModoOcioso();
 								Arena.getInstance().iniciarArena();
 							}
-							Thread.sleep(5000);
+							Thread.sleep(8000);
 							textPane.setText("");
 						} catch (InterruptedException interruptedException) {
 							interruptedException.printStackTrace();
