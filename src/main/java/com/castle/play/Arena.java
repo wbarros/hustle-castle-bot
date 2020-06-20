@@ -97,11 +97,11 @@ public class Arena {
             Thread.sleep(1300);
             int poder = findImage.getPower(config.getPowerCut().get("x"), config.getPowerCut().get("y"), config.getPowerCut().get("width"), config.getPowerCut().get("height"));
             System.out.println("Posicao: " + i + " poder: "+ poder);
-            if(poder > 1200000 && poder < 200000) {
+            if(poder > 1200000 || poder < 200000) {
                 poder = findImage.getPower(config.getPowerCut().get("x"), config.getPowerCut().get("y"), config.getPowerCut().get("width")+10, config.getPowerCut().get("height"));
                 System.out.println("Retentativa1 poder: "+ poder);
             }
-            if(poder > 1200000 && poder < 200000) {
+            if(poder > 1200000 || poder < 200000) {
                 poder = findImage.getPower(config.getPowerCut().get("x"), config.getPowerCut().get("y"), config.getPowerCut().get("width")-10, config.getPowerCut().get("height"));
                 System.out.println("Retentativa2 poder: "+ poder);
             }
