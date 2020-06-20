@@ -23,7 +23,7 @@ public class Testes {
 
     public static void teste1() {
         FindImage findImage = FindImage.getInstance();
-        int poder = findImage.getPower();
+        int poder = findImage.getPower(0,0,0,0);
         System.out.println("Poder: "+poder);
 
         Main.continuar = false;
