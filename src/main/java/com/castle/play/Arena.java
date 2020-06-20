@@ -172,7 +172,8 @@ public class Arena {
                 p = escolheAdversarioMenorPoderAcimaDoMeuPelotao(batalha);
             }
             //se mesmo com a estrategia eu ja enfrentei todos acima ou todos abaixo então p == null
-            if( null == p) {
+            if(p == null) {
+                System.out.println("fugindo da estrategia p == null");
                 p = escolheAdversarioMenorPoder(batalha);
             }
 

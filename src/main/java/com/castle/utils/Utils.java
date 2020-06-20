@@ -59,7 +59,7 @@ public class Utils {
                 System.out.println(msg);
                 if (i == 15) {
                     encontraImagemParaClicar("arena/botao_arena_cancelar.png");
-                } else if( i == 20) {
+                } else if( i == 16) {
                     encontraImagemParaClicar("arena/botao_arena_sem_comida.png");
                     i=0;
                 }
