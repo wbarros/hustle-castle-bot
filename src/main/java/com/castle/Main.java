@@ -113,14 +113,14 @@ public class Main extends JPanel{
 						try {
 							if (Utils.encontraImagemParaClicar(BOTAO_PARTICIPAR_ARENA_FRUTAS)) {
 								System.out.println("Participar clicado.");
-								Thread.sleep(1000);
+								Thread.sleep(3000);
 								if (Utils.encontraImagemParaClicar(BOTAO_ARENA_SEM_COMIDA)) {
 									aptoParaBatalha = true;
 									System.out.println("Sem comida.");
 								}
 							} else if(Utils.encontraImagemParaClicar(BOTAO_PARTICIPAR_ARENA_BILHETE)) {
 								System.out.println("Participar bilhete clicado.");
-								Thread.sleep(1000);
+								Thread.sleep(3000);
 								if (Utils.encontraImagemParaClicar(BOTAO_ARENA_SEM_COMIDA)) {
 									aptoParaBatalha = true;
 									System.out.println("Sem bilhete.");
