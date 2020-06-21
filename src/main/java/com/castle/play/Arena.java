@@ -94,7 +94,7 @@ public class Arena {
             //if(screenRegion != null) {
             mouse.move(screenLocationList.get(i-1));
             mouse.click(screenLocationList.get(i-1));
-            Thread.sleep(1200);
+            Thread.sleep(1000);
             int poder = findImage.getPower(config.getPowerCut().get("x"), config.getPowerCut().get("y"), config.getPowerCut().get("width"), config.getPowerCut().get("height"));
             System.out.println("Posicao: " + i + " poder: "+ poder);
             if(poder > 1200000 || poder < 200000) {
