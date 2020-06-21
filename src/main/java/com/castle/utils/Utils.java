@@ -88,11 +88,19 @@ public class Utils {
         if(encontraImagemParaClicar("arena/botao_atualizar_ocioso.png")) {
             System.out.println("Ops entrei no modo ocioso,\nvamos sair dessa...");
             Thread.sleep(10000);
+            //Melhorar esse bloco de tentar clicar duas vezes
             if(encontraImagemParaClicar("arena/botao_mapa_tela_inicial.png"))
                 System.out.println("Encontrei o mapa");
-            else
+            Thread.sleep(5000);
+            if(encontraImagemParaClicar("arena/botao_mapa_tela_inicial.png"))
+                System.out.println("Retentativa clique no mapa");
+            else {
                 System.out.println("Não encontrei o mapa");
+            }
             Thread.sleep(10000);
+            if(encontraImagemParaClicar("arena/imagem_arena_entrar.png"))
+                System.out.println("Encontrei a Arena");
+            Thread.sleep(5000);
             if(encontraImagemParaClicar("arena/imagem_arena_entrar.png"))
                 System.out.println("Encontrei a Arena");
             else
