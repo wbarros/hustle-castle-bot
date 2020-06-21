@@ -5,7 +5,7 @@ savePowers: false
 #32 tres baixo 2 cima
 #41 quatro baixo 1 cima
 #50 cinco baixo (pega só os de menor poder)
-seletorEstrategia : 50
+seletorEstrategia : 41
 
 #recorte do poder
 #MAP
