@@ -147,9 +147,9 @@ public class Arena {
         int i=1;
         if(batalha != null && !batalha.getPelotaoListAEnfrentar().isEmpty()) {
             for (Pelotao pelotao : batalha.getPelotaoListAEnfrentar()) {
+                if(i == minhaPosicao)
+                    break;
                 if(pelotao.getPoder() < menorPoder && !batalha.getPelotaoListJaEnfrentado().contains(pelotao)) {
-                    if(i == minhaPosicao)
-                        break;
                     menorPoder = pelotao.getPoder();
                     pelotaoParaAtacar = pelotao;
                 }

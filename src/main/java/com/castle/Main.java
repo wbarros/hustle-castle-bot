@@ -133,7 +133,7 @@ public class Main extends JPanel{
 								if (Utils.encontraImagemParaClicar(BOTAO_PARTICIPAR_ARENA_CONFIRMAR))
 									System.out.println("Confirmar clicado.");
 								Thread.sleep(3000);
-								Utils.esperarEventoAcontecerCliqueNaoOcioso(BOTAO_ARENA_CANCELAR, "Esperando arena comercar...");
+								Utils.esperarEventoAcontecerCliqueNaoOcioso(BOTAO_ARENA_CANCELAR, "Esperando arena comecar...");
 								Arena.getInstance().iniciarArena();
 							}
 							Thread.sleep(8000);

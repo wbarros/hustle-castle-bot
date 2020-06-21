@@ -42,7 +42,7 @@ public class Utils {
             FindImage findImage = FindImage.getInstance();
             while(!findImage.imageExists(nomeImagem) && Main.continuar) {
                 System.out.println(msg);
-                Thread.sleep(2000);
+                Thread.sleep(1000);
                 Utils.sairDoModoOcioso();
             }
             encontraImagemParaClicar(nomeImagem);
