@@ -43,6 +43,7 @@ public class Utils {
             while(!findImage.imageExists(nomeImagem) && Main.continuar) {
                 System.out.println(msg);
                 Thread.sleep(2000);
+                Utils.sairDoModoOcioso();
             }
             encontraImagemParaClicar(nomeImagem);
             Thread.sleep(2000);
@@ -86,11 +87,15 @@ public class Utils {
     public static void sairDoModoOcioso() throws InterruptedException {
         if(encontraImagemParaClicar("arena/botao_atualizar_ocioso.png")) {
             System.out.println("Ops entrei no modo ocioso,\nvamos sair dessa...");
-            Thread.sleep(2000);
+            Thread.sleep(5000);
             encontraImagemParaClicar("arena/botao_mapa_tela_inicial.png");
-            Thread.sleep(2000);
+            Thread.sleep(5000);
             encontraImagemParaClicar("arena/imagem_arena_entrar.png");
-            Utils.esperarEventoAcontecerCliqueNaoOcioso("arena/botao_arena_cancelar.png", "Esperando arena comercar...");
+            if(Utils.encontraImagemParaClicar("arena/botao_arena_resgatar_recompensa.png")) {
+                System.out.println("Resgatei a recompensa");
+            } else if(Utils.encontraImagemParaClicar("arena/botao_arena_fim.png")) {
+                System.out.println("Fim da arena");
+            }
         }
     }
 

@@ -94,7 +94,7 @@ public class Arena {
             //if(screenRegion != null) {
             mouse.move(screenLocationList.get(i-1));
             mouse.click(screenLocationList.get(i-1));
-            Thread.sleep(1300);
+            Thread.sleep(1200);
             int poder = findImage.getPower(config.getPowerCut().get("x"), config.getPowerCut().get("y"), config.getPowerCut().get("width"), config.getPowerCut().get("height"));
             System.out.println("Posicao: " + i + " poder: "+ poder);
             if(poder > 1200000 || poder < 200000) {
@@ -180,7 +180,7 @@ public class Arena {
             screenLocation = p.getScreenLocation();
             mouse.move(screenLocation);
             mouse.click(screenLocation);
-            Thread.sleep(1500);
+            Thread.sleep(1200);
             Utils.encontraImagemParaClicar(BOTAO_BATALHAR);
         } catch (Exception e) {
             logger.error("Problemas ao executar a estrategia, pelotao ={}", p, e);
@@ -188,7 +188,6 @@ public class Arena {
     }
 
     public void seletorEstrategias(Batalha batalha) {
-        HustleCastleBotConfig config = HustleCastleBotConfig.getInstance();
         if(config.getSeletorEstrategia() == 32) {
             estrategiaPadrao(batalha,3);
         } else if (config.getSeletorEstrategia() == 41) {

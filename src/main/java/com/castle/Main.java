@@ -132,11 +132,11 @@ public class Main extends JPanel{
 									System.out.println("Confirmar clicado.");
 								Thread.sleep(3000);
 								Utils.esperarEventoAcontecerCliqueNaoOcioso(BOTAO_ARENA_CANCELAR, "Esperando arena comercar...");
-								Utils.sairDoModoOcioso();
 								Arena.getInstance().iniciarArena();
 							}
 							Thread.sleep(8000);
 							textPane.setText("");
+							Utils.sairDoModoOcioso();
 						} catch (InterruptedException interruptedException) {
 							interruptedException.printStackTrace();
 						}
