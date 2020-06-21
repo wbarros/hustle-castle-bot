@@ -91,11 +91,11 @@ public class Utils {
             encontraImagemParaClicar("arena/botao_mapa_tela_inicial.png");
             Thread.sleep(5000);
             encontraImagemParaClicar("arena/imagem_arena_entrar.png");
-            if(Utils.encontraImagemParaClicar("arena/botao_arena_resgatar_recompensa.png")) {
-                System.out.println("Resgatei a recompensa");
-            } else if(Utils.encontraImagemParaClicar("arena/botao_arena_fim.png")) {
-                System.out.println("Fim da arena");
-            }
+        }
+        if(Utils.encontraImagemParaClicar("arena/botao_arena_resgatar_recompensa.png")) {
+            System.out.println("Resgatei a recompensa");
+        } else if(Utils.encontraImagemParaClicar("arena/botao_arena_fim.png")) {
+            System.out.println("Fim da arena");
         }
     }
 
