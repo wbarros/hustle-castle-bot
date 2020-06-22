@@ -85,6 +85,7 @@ public class Utils {
 
     public static void sairDoModoOcioso() throws InterruptedException {
         if(encontraImagemParaClicar("arena/botao_atualizar_ocioso.png")) {
+            Main.continuar = false;
             System.out.println("Ops entrei no modo ocioso,\nvamos sair dessa...");
             Thread.sleep(10000);
             if(encontraImagem("arena/ficando_sem_maca.png"))
@@ -99,6 +100,7 @@ public class Utils {
                 System.out.println("Não encontrei o mapa");
             }
             Thread.sleep(10000);
+            Main.continuar = true;
             if(encontraImagemParaClicar("arena/imagem_arena_entrar.png"))
                 System.out.println("Encontrei a Arena");
             Thread.sleep(5000);
