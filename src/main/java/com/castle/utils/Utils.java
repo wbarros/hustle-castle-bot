@@ -88,6 +88,8 @@ public class Utils {
         if(encontraImagemParaClicar("arena/botao_atualizar_ocioso.png")) {
             System.out.println("Ops entrei no modo ocioso,\nvamos sair dessa...");
             Thread.sleep(10000);
+            if(encontraImagem("arena/ficando_sem_maca.png"))
+                encontraImagemParaClicar("arena/botao_fechar_maca.png");
             //Melhorar esse bloco de tentar clicar duas vezes
             if(encontraImagemParaClicar("arena/botao_mapa_tela_inicial.png"))
                 System.out.println("Encontrei o mapa");
@@ -120,6 +122,17 @@ public class Utils {
         if(screenRegion != null) {
             mouse.move(screenRegion.getCenter());
             mouse.click(screenRegion.getCenter());
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean encontraImagem(String imagem) {
+        FindImage findImage = FindImage.getInstance();
+        Mouse mouse = new DesktopMouse();
+        ScreenRegion screenRegion = findImage.findImage(imagem);
+        if(screenRegion != null) {
+            mouse.move(screenRegion.getCenter());
             return true;
         }
         return false;
