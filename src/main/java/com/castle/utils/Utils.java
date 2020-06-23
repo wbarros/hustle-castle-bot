@@ -40,7 +40,7 @@ public class Utils {
     public static void esperarEventoAcontecerEClicar(String nomeImagem, String msg) {
         try {
             FindImage findImage = FindImage.getInstance();
-            while(!findImage.imageExists(nomeImagem) && Main.continuar) {
+            while(!findImage.imageExists(nomeImagem) && Main.continuar && Main.batalhar) {
                 System.out.println(msg);
                 Utils.sairDoModoOcioso();
             }
@@ -85,8 +85,8 @@ public class Utils {
 
     public static void sairDoModoOcioso() throws InterruptedException {
         if(encontraImagemParaClicar("arena/botao_atualizar_ocioso.png")) {
-            Main.continuar = false;
             System.out.println("Ops entrei no modo ocioso,\nvamos sair dessa...");
+            Main.batalhar = false;
             Thread.sleep(10000);
             if(encontraImagem("arena/ficando_sem_maca.png"))
                 encontraImagemParaClicar("arena/botao_fechar_maca.png");
@@ -100,7 +100,6 @@ public class Utils {
                 System.out.println("Não encontrei o mapa");
             }
             Thread.sleep(10000);
-            Main.continuar = true;
             if(encontraImagemParaClicar("arena/imagem_arena_entrar.png"))
                 System.out.println("Encontrei a Arena");
             Thread.sleep(5000);

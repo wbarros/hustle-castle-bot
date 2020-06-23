@@ -27,6 +27,7 @@ public class Main extends JPanel{
 	private static final Logger logger = LoggerFactory.getLogger(Main.class);
 	JTextPane textPane = new JTextPane();
 	public static boolean continuar = true;
+	public static boolean batalhar = true;
 	private final String BOTAO_PARTICIPAR_ARENA_FRUTAS = "arena/botao_arena_participar_comida.png";
 	private final String BOTAO_PARTICIPAR_ARENA_BILHETE = "arena/botao_arena_participar_bilhete.png";
 	private final String BOTAO_PARTICIPAR_ARENA_CONFIRMAR = "arena/botao_arena_confirmar_participacao.png";
@@ -116,6 +117,7 @@ public class Main extends JPanel{
 								Thread.sleep(2000);
 								if (!Utils.encontraImagemParaClicar(BOTAO_ARENA_SEM_COMIDA)) {
 									aptoParaBatalha = true;
+									Main.batalhar = true;
 								} else {
 									System.out.println("Sem comida.");
 								}
