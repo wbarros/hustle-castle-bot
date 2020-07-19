@@ -58,7 +58,7 @@ public class Arena {
                         System.out.println("Mapeando adversarios... rodada: " + batalha.getRodada());
                         encontrarAdversariosNaBatalha(batalha);
                         seletorEstrategias(batalha);
-                        Utils.esperarEventoAcontecerEClicar(BOTAO_BATALHA_INICIO,"Esperando o fim da batalha...");
+                        Utils.esperarEventoAcontecerEClicar(BOTAO_BATALHA_INICIO,"Esperando o fim da batalha...", false);
                         completouRodada = true;
                         batalha.getPelotaoListAEnfrentar().clear();
                     }

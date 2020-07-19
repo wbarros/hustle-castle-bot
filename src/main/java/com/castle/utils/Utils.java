@@ -37,15 +37,16 @@ public class Utils {
             return Integer.MAX_VALUE;
     }
 
-    public static void esperarEventoAcontecerEClicar(String nomeImagem, String msg) {
+    public static void esperarEventoAcontecerEClicar(String nomeImagem, String msg, Boolean verificarOcioso) {
         try {
             FindImage findImage = FindImage.getInstance();
             while(!findImage.imageExists(nomeImagem) && Main.continuar && Main.batalhar) {
                 System.out.println(msg);
-                Utils.sairDoModoOcioso();
+                if(verificarOcioso)
+                    Utils.sairDoModoOcioso();
             }
             encontraImagemParaClicar(nomeImagem);
-            Thread.sleep(2000);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
