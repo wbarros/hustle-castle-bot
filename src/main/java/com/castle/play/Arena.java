@@ -28,6 +28,8 @@ public class Arena {
     private final String BOTAO_RESGATAR_RECOMPENSA = "arena/botao_arena_resgatar_recompensa.png";
     private final String BOTAO_FIM = "arena/botao_arena_fim.png";
     private final String BOTAO_BATALHA_INICIO = "arena/botao_arena_batalha_inicio.png";
+    private final String IMAGEM_EVENTO_1 = "arena/evento_lupa_arena.png";
+    private final String IMAGEM_EVENTO_2 = "arena/evento_martelo_arena.png";
     List<ScreenLocation> screenLocationList = null;
     private int minhaPosicao;
     private static HustleCastleBotConfig config;
@@ -75,8 +77,10 @@ public class Arena {
             } catch (Exception e) {
                 logger.info("Erro", e);
             }
+
         }
 
+        clickEvento();
         if(Utils.encontraImagemParaClicar(BOTAO_RESGATAR_RECOMPENSA)) {
             System.out.println("Resgatei a recompensa");
         } else if(Utils.encontraImagemParaClicar(BOTAO_FIM)) {
@@ -236,5 +240,10 @@ public class Arena {
 
         }
         return screenLocations;
+    }
+
+    public void clickEvento() {
+        Utils.encontraImagemParaClicar(IMAGEM_EVENTO_1);
+        Utils.encontraImagemParaClicar(IMAGEM_EVENTO_2);
     }
 }
